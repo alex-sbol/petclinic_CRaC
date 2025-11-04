@@ -60,6 +60,8 @@ dependencies {
   checkstyle "com.puppycrawl.tools:checkstyle:${checkstyleVersion}"
   errorprone "com.google.errorprone:error_prone_core:${errorProneVersion}"
   errorprone "com.uber.nullaway:nullaway:${nullAwayVersion}"
+  implementation 'org.crac:crac'
+  implementation("io.github.crac.org.springframework.boot:crac-spring-boot-starter:3.4.3")
 }
 
 tasks.named('test') {

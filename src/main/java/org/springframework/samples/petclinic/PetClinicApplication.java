@@ -30,6 +30,21 @@ import org.springframework.context.annotation.ImportRuntimeHints;
 public class PetClinicApplication {
 
 	public static void main(String[] args) {
+
+		// Detect if CRaC mode is active - either through JVM flag or env var
+		boolean cracMode =
+			System.getProperty("jdk.crac.checkpointTo") != null ||
+				System.getProperty("CRAC_MODE") != null ||
+				System.getenv("CRAC_MODE") != null;
+
+		if (cracMode) {
+			System.out.println("CRaC mode detected → disabling DevTools restart & LiveReload");
+
+			// Disable DevTools features that cause open sockets
+			System.setProperty("spring.devtools.restart.enabled", "false");
+			System.setProperty("spring.devtools.livereload.enabled", "false");
+		}
+
 		SpringApplication.run(PetClinicApplication.class, args);
 	}
 
