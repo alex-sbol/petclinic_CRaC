@@ -32,10 +32,8 @@ public class PetClinicApplication {
 	public static void main(String[] args) {
 
 		// Detect if CRaC mode is active - either through JVM flag or env var
-		boolean cracMode =
-			System.getProperty("jdk.crac.checkpointTo") != null ||
-				System.getProperty("CRAC_MODE") != null ||
-				System.getenv("CRAC_MODE") != null;
+		boolean cracMode = System.getProperty("jdk.crac.checkpointTo") != null
+				|| System.getProperty("CRAC_MODE") != null || System.getenv("CRAC_MODE") != null;
 
 		if (cracMode) {
 			System.out.println("CRaC mode detected → disabling DevTools restart & LiveReload");
