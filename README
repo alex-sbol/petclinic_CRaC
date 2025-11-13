@@ -2,7 +2,7 @@
 
 ### Implementation Overview
 
-- UnifiedCracResource handles Tomcat stop/start, DB connection cleanup.
+- handles Tomcat stop/start, DB connection cleanup.
 - `/snapshot/create` endpoint triggers `Core.checkpointRestore()`.
 - CLI tool implemented to trigger snapshot/restore commands.
 - Minimal subset captured: fully initialized Spring context, Tomcat, HikariCP pool.
