@@ -20,7 +20,7 @@ Attempts made:
 
 | Environment | Result |
 |------------|---------|
-| Windows native Docker | Cannot checkpoint |
+| Windows native | Cannot checkpoint |
 | Docker Desktop + WSL2 | I never managed to make it work properly |
 | Linux VM | My PC struggled to run VM |
 :/
