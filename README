@@ -21,7 +21,7 @@ Attempts made:
 | Environment | Result |
 |------------|---------|
 | Windows native | Cannot checkpoint |
-| Docker Desktop + WSL2 | I never managed to make it work properly |
+| Docker Desktop + WSL2 | I never managed to make it work properly. snapshots were never generated |
 | Linux VM | My PC struggled to run VM |
 :/
 In ideal situation i would use existing scripts to measure cold and snapshot start time and take average over 5 runs.
