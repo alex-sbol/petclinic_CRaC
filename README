@@ -1,0 +1,28 @@
+## Task 2 — Snapshot Creation & Restoration
+
+### Implementation Overview
+
+- UnifiedCracResource handles Tomcat stop/start, DB connection cleanup.
+- `/snapshot/create` endpoint triggers `Core.checkpointRestore()`.
+- CLI tool implemented to trigger snapshot/restore commands.
+- Minimal subset captured: fully initialized Spring context, Tomcat, HikariCP pool.
+- Optimal snapshot time selected: warmed, idle system.
+
+
+### CRaC Snapshots Cannot Be Created on Windows
+
+CRaC requires:
+- Linux kernel features (checkpoint_restore syscall)
+- CRIU
+- A Linux JVM distribution with CRaC support
+
+Attempts made:
+
+| Environment | Result |
+|------------|---------|
+| Windows native Docker | Cannot checkpoint |
+| Docker Desktop + WSL2 | I never managed to make it work properly |
+| Linux VM | My PC struggled to run VM |
+:/
+In ideal situation i would use existing scripts to measure cold and snapshot start time and take average over 5 runs.
+also simulation traffic with curl + bash script as extra
